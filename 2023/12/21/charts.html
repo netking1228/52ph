@@ -611,10 +611,29 @@
 
     <h3>建議作法</h3>
     <p>經查詢可知道政府公告的步道開放時間，但想看到的整体過程可能因人而異，為了確保達到最佳觀賞時段， 可查看以下直播；「摩西分海即時影像-北寮奎壁山」，及時了解動態訊息</p>
-    <div class="embed-container">
-        <iframe src="https://www.youtube.com/embed/5pu-gQLc23g?si=hT3BW4iwTAihv63I" width="700" height="480" frameborder="0" allowfullscreen="true">
-        </iframe>
-    </div>
+   
+   
+    <!-- 引用动态生成的 JavaScript 文件 -->
+<script src="https://www.ph515.tw/assets/js/youtube.js"></script>
+
+<!-- YouTube 视频容器 -->
+<div class="embed-container">
+    <iframe id="youtube-frame" width="700" height="480" frameborder="0" allowfullscreen="true"></iframe>
+</div>
+
+<!-- JavaScript 动态设置 iframe 的 src -->
+<script>
+    // 等待页面加载完成后设置 iframe 的 src
+    window.addEventListener("DOMContentLoaded", () => {
+        const iframe = document.getElementById("youtube-frame");
+        if (iframe && typeof youtubeEmbedUrl !== "undefined") {
+            iframe.src = youtubeEmbedUrl; // 使用从 youtube.js 加载的变量
+        } else {
+            console.error("YouTube Embed URL 未定义或 iframe 未找到！");
+        }
+    });
+</script>
+
     <br />
     <h3>注意事項說明</h3>
     <p>
@@ -728,7 +747,7 @@
     <article class="card">
       <div class="col-12">
         <div class=" text-center">
-          <p>© Copyright 2024 52菊島旅店. Design by <a
+          <p>© Copyright 2025 52菊島旅店. Design by <a
               href="https://line.me/ti/p/~0937214165"><b>Cantor Technology Co., Ltd</b></a>
           </p>
         </div>
